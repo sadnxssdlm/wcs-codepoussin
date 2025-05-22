@@ -1,4 +1,5 @@
 import type React from "react";
+import "../../assets/styles/Instructions.css";
 
 interface InstructionProps {
   instruction: string;
