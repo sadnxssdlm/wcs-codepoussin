@@ -1,7 +1,5 @@
-
-import Quiz from "../../src/components/Quiz"
+import Quiz from "../../src/components/Quiz";
 import "../assets/styles/HomePage.css";
-
 
 function HomePage() {
   return (
