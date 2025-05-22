@@ -4,7 +4,7 @@ import Cours from "../components/Cours/Cours";
 
 function HomePage() {
   return (
-    <main className="main-content">
+    <main className="main-homepage">
       <Cours />
       <Quiz />
     </main>
