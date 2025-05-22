@@ -1,0 +1,135 @@
+.header {
+  background-color: var(--primary-color);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  img {
+    height: 60px;
+    margin: 5px;
+  }
+
+  h1 {
+    font-family: "Inter", sans-serif;
+    font-size: 1.7rem;
+  }
+
+  ul {
+    display: none;
+    font-family: "Inter", sans-serif;
+    text-transform: uppercase;
+  }
+  nav {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  a {
+    transition: color 0.2s ease;
+  }
+  a:hover {
+    color: var(--link-color);
+  }
+}
+
+.burger-menu {
+  width: 37px;
+  display: flex;
+  background: none;
+  right: 10px;
+  position: fixed;
+  border: inherit;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.burger-menu span,
+.burger-menu span::before,
+.burger-menu span::after {
+  height: 9px;
+  width: 100%;
+  border-radius: 5px;
+  background-color: var(--background-color);
+  display: block;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.burger-menu span::before,
+.burger-menu span::after {
+  content: "";
+  position: absolute;
+}
+
+.burger-menu span::before {
+  transform: translateY(-14px);
+}
+
+.burger-menu span::after {
+  transform: translateY(14px);
+}
+
+.show-nav .burger-menu span {
+  background: transparent;
+}
+
+.show-nav .burger-menu span::before {
+  transform: rotate(45deg);
+}
+
+.show-nav .burger-menu span::after {
+  transform: rotate(-45deg);
+}
+
+@media screen and (max-width: 730px) {
+  .header.show-nav {
+    nav {
+      opacity: 1;
+    }
+    ul {
+      display: flex;
+      justify-content: space-around;
+      font-family: "Inter", sans-serif;
+      font-size: 1.4rem;
+      align-items: center;
+      background-color: var(--primary-color);
+      width: 100vw;
+      height: 60px;
+      position: fixed;
+      opacity: 1;
+      right: 0;
+      top: 55px;
+    }
+  }
+}
+
+@media screen and (min-width: 730px) {
+  .header {
+    .burger-menu {
+      display: none;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    nav {
+      opacity: 1;
+    }
+
+    ul {
+      display: flex;
+      justify-self: right;
+      gap: 20px;
+      font-size: 1.2rem;
+      margin-right: 15px;
+    }
+  }
+}
