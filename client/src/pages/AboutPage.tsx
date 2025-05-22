@@ -1,4 +1,4 @@
-import "./AboutPage.css";
+import "../assets/styles/AboutPage.css";
 
 function AboutPage() {
   return (

@@ -1,8 +1,8 @@
 import { Outlet } from "react-router";
 import "./App.css";
-import Cours from "./components/Cours/Cours";
-import Footer from "./components/Footer/Footer";
-import Header from "./components/Header/Header";
+
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 function App() {
   return (
@@ -10,7 +10,6 @@ function App() {
       <Header />
       <Outlet />
       <Footer />
-      <Cours />
     </>
   );
 }

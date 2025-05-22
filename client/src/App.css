@@ -1,8 +1,30 @@
+@font-face {
+  src: url("../fonts/Inter_18pt-Regular.ttf");
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
 }
 
 :root {
   --primary-color: #ffc219;
   --background-color: #0f0f0f;
+  --link-color: #555555;
 }
