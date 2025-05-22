@@ -1,3 +1,5 @@
+import "../assets/Style/Quiz.css";
+
 interface QuestionProps {
   question: string;
   options: string[];

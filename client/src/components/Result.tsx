@@ -1,3 +1,5 @@
+import "../assets/Style/Quiz.css";
+
 interface ResultatProps {
   score: number;
   totalQuestion: number;

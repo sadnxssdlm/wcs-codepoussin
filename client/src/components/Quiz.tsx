@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import Question from "./Question";
 import Result from "./Result";
+import "../assets/Style/Quiz.css";
 
 interface QuestionData {
   question: string;
@@ -124,7 +125,7 @@ const Quiz = () => {
     <div className="quiz">
       <div className="countandTime">
         <div className="questionNumber">
-          Question : {currentQuestion + 1} <b>/</b> {data.length}
+          Question : {currentQuestion + 1} / {data.length}
         </div>
         <div className="timer">Temps restant : {timer} secondes</div>
       </div>
