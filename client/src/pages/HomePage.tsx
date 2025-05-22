@@ -1,14 +1,11 @@
-
-import Quiz from "../../src/components/Quiz"
+import Quiz from "../../src/components/Quiz";
 import "../assets/styles/HomePage.css";
-
 
 function HomePage() {
   return (
-    <>
-      <h1>HomePage</h1>
+    <main className="main-content">
       <Quiz />
-    </>
+    </main>
   );
 }
 
