@@ -17,17 +17,19 @@ const Question = ({
 }: QuestionProps) => {
   return (
     <div className="question">
-      <h2>{question}</h2>
-      {options.map((option) => (
-        <button
-          type="button"
-          className="option"
-          key={option}
-          onClick={() => onAnswer(option)}
-        >
-          {option}
-        </button>
-      ))}
+      <div className="menu">
+        <h2>{question}</h2>
+        {options.map((option) => (
+          <button
+            type="button"
+            className="option"
+            key={option}
+            onClick={() => onAnswer(option)}
+          >
+            {option}
+          </button>
+        ))}
+      </div>
       {showNextButton && (
         <button type="button" className="next" onClick={onNext}>
           Question suivante
