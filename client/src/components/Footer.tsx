@@ -2,9 +2,13 @@ import "../assets/styles/Footer.css";
 
 function Footer() {
   return (
-    <>
-      <h1>Footer</h1>
-    </>
+    <footer className="footer">
+      <p>
+        © 2025 - CodePoussin
+        <br />
+        Made with ❤️ by Team 5
+      </p>
+    </footer>
   );
 }
 
