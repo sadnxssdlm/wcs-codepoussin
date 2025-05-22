@@ -7,6 +7,7 @@ import { RouterProvider, createBrowserRouter } from "react-router";
 
 // Import the main app component
 import App from "./App";
+
 import AboutPage from "./pages/AboutPage";
 import HomePage from "./pages/HomePage";
 
