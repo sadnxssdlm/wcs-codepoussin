@@ -74,6 +74,10 @@
   .result p {
     font-size: 1.2rem;
   }
+
+  .question .option:hover {
+    background-color: bisque;
+  }
 }
 
 @media (min-width: 768px) {
@@ -136,6 +140,10 @@
     border-radius: 1rem;
     font-size: 2rem;
     width: 50rem;
+  }
+
+  .question .option:hover {
+    background-color: bisque;
   }
 
   .question .next {
