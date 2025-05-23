@@ -116,7 +116,7 @@ const LevelContainer: React.FC = () => {
 
   return (
     <div className="level-container">
-      <h2 className="lvlcontainer-title">Mission 2: Code Blocks</h2>
+      <h2 className="lvlcontainer-title">Mission 3: Code Blocks</h2>
 
       <LevelSelector
         currentLevel={currentLevel}

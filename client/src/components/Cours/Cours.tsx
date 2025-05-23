@@ -17,6 +17,8 @@ function Cours() {
         <h1>
           Mission 1 <br /> Decouvre le code
         </h1>
+      </div>
+      <div className="cours2">
         <h2>Clique sur le poussin de ton choix.</h2>
       </div>
 
