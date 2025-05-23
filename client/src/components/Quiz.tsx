@@ -34,26 +34,15 @@ const data: QuestionData[] = [
   },
   {
     question:
-      "Comment écrivez-vous un commentaire sur une seule ligne en JavaScript ?",
-    options: ["// Commentaire", "", "/* Commentaire */", "# Commentaire"],
-    answer: "// Commentaire",
+      "Quelle est le meilleur systeme d'exploitation ?",
+    options: ["Windows", "Mac OS", "Linux", "Chrome OS"],
+    answer: "Windows",
   },
   {
     question:
       "Quel attribut HTML spécifie une URL alternative pour une image si l'image ne peut pas être affichée ?",
     options: ["src", "href", "alt", "title"],
     answer: "alt",
-  },
-  {
-    question:
-      "Quelle est la méthode correcte pour lier une feuille de style externe (style.css) à un document HTML ?",
-    options: [
-      "<style src='style.css'>",
-      "<stylesheet>style.css</stylesheet>",
-      "<link rel='stylesheet' href='style.css'>",
-      "<css href='style.css'>",
-    ],
-    answer: "<link rel='stylesheet' href='style.css'>",
   },
   {
     question:
@@ -116,12 +105,12 @@ const Quiz = () => {
     }
     setShowNextButton(true);
   };
-
   if (showResult) {
     return <Result score={score} totalQuestion={data.length} />;
   }
 
   return (
+    <div className="border">
     <div className="quiz">
       <div className="countandTime">
         <div className="questionNumber">
@@ -136,6 +125,7 @@ const Quiz = () => {
         onNext={handleNext}
         showNextButton={showNextButton}
       />
+    </div>
     </div>
   );
 };

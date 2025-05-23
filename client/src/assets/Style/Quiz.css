@@ -41,7 +41,7 @@
     display: flex;
     margin: 20px;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     background-color: #eaf0e7;
     padding: 1rem;
     border-radius: 1rem;
@@ -62,7 +62,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 20rem;
+    height: 25rem;
     margin-top: 140px;
     background-color: #fec33d;
   }
@@ -77,6 +77,10 @@
 
   .question .option:hover {
     background-color: bisque;
+  }
+
+  .resultimage {
+    width: 150px;
   }
 }
 
@@ -134,12 +138,18 @@
     display: flex;
     margin: 20px;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     background-color: #eaf0e7;
     padding: 1rem;
     border-radius: 1rem;
     font-size: 2rem;
-    width: 50rem;
+    width: 20rem;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .question .option:hover {
@@ -160,9 +170,10 @@
     justify-content: center;
     flex-direction: column;
     width: 25rem;
-    height: 20rem;
+    height: 25rem;
     margin-top: 140px;
     background-color: #fec33d;
+    margin-left: 43%;
   }
 
   .result h2 {
@@ -171,5 +182,9 @@
 
   .result p {
     font-size: 1.2rem;
+  }
+
+  .resultimage {
+    width: 150px;
   }
 }
