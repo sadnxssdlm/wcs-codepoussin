@@ -8,21 +8,28 @@
 .containerpoussin img {
   width: 120px;
   height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.containerpoussin img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
 .cours {
   text-align: center;
+  color: #ffc219;
 }
 
 .carte {
-  background-color: #fff8dc; /* fond clair, style « crème » */
+  background-color: #ffc219; /* fond clair, style « crème » */
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  padding: 10px;
   max-width: 400px;
   margin: 20px auto;
   color: #333;
-  text-align: justify;
+  text-align: center;
 }
 
 .carte h2 {
