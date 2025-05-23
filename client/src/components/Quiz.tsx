@@ -67,7 +67,7 @@ const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showResult, setShowResult] = useState(false);
-  const [timer, setTimer] = useState(30);
+  const [timer, setTimer] = useState(5000);
   const [showNextButton, setShowNextButton] = useState(false);
 
   const handleNext = useCallback(() => {
@@ -78,7 +78,7 @@ const Quiz = () => {
       setShowResult(true);
     }
     setShowNextButton(false);
-    setTimer(30);
+    setTimer(5000);
   }, [currentQuestion]);
 
   useEffect(() => {
@@ -115,7 +115,7 @@ const Quiz = () => {
           <div className="questionNumber">
             Question : {currentQuestion + 1} / {data.length}
           </div>
-          <div className="timer">Temps restant : {timer} secondes</div>
+          <div className="timer">{timer}</div>
         </div>
         <Question
           question={data[currentQuestion].question}
