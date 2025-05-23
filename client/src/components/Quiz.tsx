@@ -110,10 +110,8 @@ const Quiz = () => {
 
   return (
     <>
-      <div className="cours">
-        <h1>
-          Mission 2 <br /> Teste tes connaissances.
-        </h1>
+      <div className="title">
+        <h1>Mission 2: Teste tes connaissances</h1>
       </div>
       <div className="border">
         <div className="quiz">

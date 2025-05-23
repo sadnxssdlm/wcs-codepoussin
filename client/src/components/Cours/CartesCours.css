@@ -25,6 +25,7 @@
   display: block;
   text-transform: uppercase;
   border-radius: 8px;
+  margin: 20px;
 }
 
 .cours2 {
@@ -69,8 +70,13 @@
     height: auto;
   }
 
+  .cours {
+    padding-top: 10px;
+  }
+
   .cours h1 {
-    font-size: 2.2rem;
+    font-size: 2rem;
+    padding: 5px;
   }
 
   .cours h2 {
@@ -96,12 +102,13 @@
     color: black;
     text-align: center;
     font-weight: bold;
-    padding: 8px 20px;
+    padding: 0 20px;
     display: block;
-    font-size: 35px;
+    font-size: 1rem;
     margin: 0 auto 30px;
     text-transform: uppercase;
     width: fit-content;
     border-radius: 8px;
+    margin-top: 30px;
   }
 }
