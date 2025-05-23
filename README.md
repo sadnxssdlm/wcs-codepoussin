@@ -1,5 +1,3 @@
-# codepoussin
-
 Ce projet est un monorepo JS, suivant l'architecture React-Express-MySQL telle qu'enseignée à la Wild Code School (v7.2.4) :
 
 ```mermaid
@@ -389,3 +387,6 @@ Nous accueillons avec plaisir les contributions ! Veuillez suivre ces étapes po
 - Assurez-vous que votre code respecte les standards de codage en exécutant `npm run check` avant de pousser vos modifications.
 - Ajoutez des tests pour toute nouvelle fonctionnalité ou correction de bug.
 - Documentez clairement vos modifications dans la description de la pull request.
+=======
+# wcs-codepoussin
+>>>>>>> ac715e4e185cbc31548453e15356d20a5ebc7c74
