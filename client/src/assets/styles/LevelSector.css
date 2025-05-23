@@ -1,10 +1,10 @@
 .level-selector {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
-  padding: 2rem 0;
+  gap: 0.5rem;
+  padding: 1rem 0;
 }
 
 .continue-application {
@@ -27,10 +27,10 @@
   cursor: pointer;
   position: relative;
   border-radius: 5px;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
-  line-height: 19px;
-  padding: 17px 29px 17px 69px;
+  line-height: 16px;
+  padding: 12px 20px 12px 58px;
   transition: background 0.3s;
   color: var(--color);
   background: var(--bg, var(--background));
@@ -40,7 +40,7 @@
   top: 0;
   left: 0;
   bottom: 0;
-  width: 53px;
+  width: 45px;
   position: absolute;
   overflow: hidden;
   border-radius: 5px 0 0 5px;
@@ -48,11 +48,11 @@
 }
 
 .continue-application > div .folder {
-  width: 23px;
-  height: 27px;
+  width: 20px;
+  height: 24px;
   position: absolute;
-  left: 15px;
-  top: 13px;
+  left: 12px;
+  top: 10px;
 }
 
 .continue-application > div .folder .top {
@@ -204,4 +204,29 @@
   --pby: -3px;
   --pbd: .15s;
   --pex: -24px;
+}
+
+@media screen and (min-width: 768px) {
+  .level-selector {
+    flex-direction: row;
+    gap: 1rem;
+    padding: 2rem 0;
+  }
+
+  .continue-application {
+    font-size: 14px;
+    line-height: 19px;
+    padding: 17px 29px 17px 69px;
+  }
+
+  .continue-application > div {
+    width: 53px;
+  }
+
+  .continue-application > div .folder {
+    width: 23px;
+    height: 27px;
+    left: 15px;
+    top: 13px;
+  }
 }

@@ -56,6 +56,25 @@ const LevelContainer: React.FC = () => {
     });
   };
 
+  const handleBlockMove = (fromDropzone: string, toDropzone: string) => {
+    setBlockPlaced((prev) => {
+      const newState = { ...prev };
+
+      if (!newState[fromDropzone]) return prev;
+
+      if (newState[toDropzone]) {
+        const temp = newState[toDropzone];
+        newState[toDropzone] = newState[fromDropzone];
+        newState[fromDropzone] = temp;
+      } else {
+        newState[toDropzone] = newState[fromDropzone];
+        delete newState[fromDropzone];
+      }
+
+      return newState;
+    });
+  };
+
   const resetLevel = () => {
     setBlockPlaced({});
     setresultsMessage({ type: null, message: "" });
@@ -97,7 +116,7 @@ const LevelContainer: React.FC = () => {
 
   return (
     <div className="level-container">
-      <h2 className="lvlcontainer-title">Code Blocks</h2>
+      <h2 className="lvlcontainer-title">Mission 2: Code Blocks</h2>
 
       <LevelSelector
         currentLevel={currentLevel}
@@ -109,6 +128,9 @@ const LevelContainer: React.FC = () => {
       <CodeEditor
         code={levels[currentLevel].code}
         validateResult={resultsMessage}
+        blockPlaced={blockPlaced}
+        onBlockDrop={handleBlockDrop}
+        onBlockMove={handleBlockMove}
       />
 
       <BlockContainer

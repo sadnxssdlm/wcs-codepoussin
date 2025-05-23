@@ -94,6 +94,79 @@
   margin-left: 16px;
 }
 
+.dropzone {
+  background-color: rgba(65, 105, 225, 0.1);
+  border: 1px dashed #ddbd2f;
+  border-radius: 3px;
+  min-height: 24px;
+  margin: 2px 0;
+  transition: all 0.2s ease;
+}
+
+.dropzone.active {
+  background-color: rgba(65, 105, 225, 0.2);
+  border-color: #4169e1;
+}
+
+.dropzone.hover {
+  background-color: rgba(65, 105, 225, 0.3);
+  border-color: #6495ed;
+  box-shadow: 0 0 5px rgba(100, 149, 237, 0.5);
+}
+
+.placed-block {
+  background: linear-gradient(145deg, #2d2d2d, #404040);
+  border-radius: 3px;
+  padding: 4px 8px;
+  margin: 1px 0;
+  cursor: move;
+  transition: all 0.2s ease;
+  position: relative;
+  border: 1px solid #555;
+}
+
+.placed-block:hover {
+  background: linear-gradient(145deg, #333, #454545);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.placed-block.html {
+  background: linear-gradient(145deg, #4a1c1c, #662626);
+  border-color: #8b3d3d;
+}
+
+.placed-block.css {
+  background: linear-gradient(145deg, #1c314a, #264466);
+  border-color: #3d5a8b;
+}
+
+.placed-block.js {
+  background: linear-gradient(145deg, #4a461c, #666326);
+  border-color: #8b833d;
+}
+
+.placed-block.dragging {
+  opacity: 0.5;
+  transform: scale(0.95);
+}
+
+.drag-handle {
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: move;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  color: #888;
+  font-size: 14px;
+}
+
+.placed-block:hover .drag-handle {
+  opacity: 1;
+}
+
 /* Responsive */
 @media (min-width: 768px) {
   .code-area {
