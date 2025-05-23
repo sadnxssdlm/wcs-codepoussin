@@ -51,11 +51,11 @@ export const levels: Record<LevelType, Level> = {
       "<ul>",
     ],
     solutions: {
-      title: "title>Ma première page web</title>",
-      h1: "h1>Bienvenue sur ma page</h1>",
-      p: "p>Ceci est un paragraphe de texte simple.</p>",
-      img: 'img src="image.jpg" alt="Une image">',
-      ul: "ul>",
+      title: "<title>Ma première page web</title>",
+      h1: "<h1>Bienvenue sur ma page</h1>",
+      p: "<p>Ceci est un paragraphe de texte simple.</p>",
+      img: '<img src="image.jpg" alt="Une image">',
+      ul: "<ul>",
     },
   },
 
