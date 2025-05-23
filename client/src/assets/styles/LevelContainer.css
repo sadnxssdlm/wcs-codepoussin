@@ -1,0 +1,129 @@
+.level-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.lvlcontainer-title {
+  background-color: #ffcc00;
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  padding: 8px 20px;
+  display: block;
+  font-size: 35px;
+  margin: 0 auto 30px;
+  text-transform: uppercase;
+  width: fit-content;
+  border-radius: 8px;
+}
+
+.result-message {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  z-index: 1000;
+  animation: fadeInUp 0.3s ease-out;
+}
+
+.result-message.success {
+  background-color: #2ecc71;
+}
+
+.result-message.error {
+  background-color: #e74c3c;
+}
+
+.drag-block {
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: move;
+  font-family: "Consolas", "Monaco", monospace;
+  font-size: 13px;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.drag-block.html {
+  background: var(--primary-color);
+  color: black;
+  border: 1px solid #e7cf0e;
+}
+
+.drag-block.css {
+  background: var(--primary-color);
+  color: black;
+  border: 1px solid #e7cf0e;
+}
+
+.drag-block.js {
+  background: var(--primary-color);
+  color: black;
+  border: 1px solid #e7cf0e;
+}
+
+.drag-block:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.drag-block.dragging {
+  opacity: 0.5;
+  transform: scale(0.95);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.control-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.control-button.validate {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.control-button.reset {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.control-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.control-button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}

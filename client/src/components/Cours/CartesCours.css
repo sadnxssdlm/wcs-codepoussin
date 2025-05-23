@@ -1,0 +1,107 @@
+.containerpoussin {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.containerpoussin img {
+  width: 120px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.containerpoussin img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.cours {
+  text-align: center;
+  background-color: #ffcc00;
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  display: block;
+  text-transform: uppercase;
+  border-radius: 8px;
+}
+
+.cours2 {
+  color: #f0f0f0;
+  text-align: center;
+  font-weight: bold;
+}
+.carte {
+  background-color: #ffc219; /* fond clair, style « crème » */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  max-width: 400px;
+  margin: 20px auto;
+  color: #333;
+  text-align: center;
+}
+
+.carte h2 {
+  color: black;
+  text-align: center; /* centre le titre */
+  margin-bottom: 15px;
+}
+
+.carte .contenu p {
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.carte code {
+  background-color: #f0f0f0;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: blue;
+}
+
+@media (min-width: 768px) {
+  .containerpoussin img {
+    width: 200px;
+    height: auto;
+  }
+
+  .cours h1 {
+    font-size: 2.2rem;
+  }
+
+  .cours h2 {
+    font-size: 1.4rem;
+  }
+
+  .carte {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 25px;
+  }
+
+  .carte h2 {
+    font-size: 1.6rem;
+  }
+
+  .carte .contenu p {
+    font-size: 1.1rem;
+  }
+
+  .cours {
+    background-color: #ffcc00;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    padding: 8px 20px;
+    display: block;
+    font-size: 35px;
+    margin: 0 auto 30px;
+    text-transform: uppercase;
+    width: fit-content;
+    border-radius: 8px;
+  }
+}

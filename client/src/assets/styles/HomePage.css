@@ -1,0 +1,6 @@
+.main-homepage {
+  margin-top: 80px;
+  padding: 20px 0;
+  background-image: url("background-image.png");
+  background-color: var(--background-color);
+}

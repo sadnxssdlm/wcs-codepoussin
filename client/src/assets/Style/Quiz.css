@@ -1,0 +1,229 @@
+@media (max-width: 768px) {
+  * {
+    box-sizing: border-box;
+  }
+
+  .quiz {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--background-color);
+    width: 320px;
+    margin: 10px auto;
+    border-radius: 20px;
+    padding: 10px;
+  }
+
+  .countandTime {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .questionNumber {
+    font-size: 2rem;
+    background-color: #fec33d;
+    padding: 1rem;
+    border-radius: 10px;
+    font-weight: bold;
+    width: 250px;
+    font-size: 1.5rem;
+    text-align: center;
+    width: 200px;
+  }
+
+  .timer {
+    font-size: 2rem;
+    background-color: #fec33d;
+    padding: 10px;
+    border-radius: 27.5px;
+    font-weight: bold;
+    width: 55px;
+    text-align: center;
+    margin: 0 auto;
+    display: none;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .question h2 {
+    background-color: #eaf0e7;
+    padding: 15px;
+    border-radius: 2rem;
+    width: 300px;
+    font-size: 1rem;
+  }
+
+  .question .option {
+    display: flex;
+    margin: 5px;
+    flex-direction: column;
+    align-items: center;
+    background-color: #eaf0e7;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    font-size: 2rem;
+    width: 200px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  .question .next {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .question .next button {
+    font-size: 2rem;
+    background-color: #fec33d;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+
+  .result {
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 25rem;
+    background-color: #fec33d;
+    margin: 100px 20px 0 20px;
+  }
+
+  .result h2 {
+    font-size: 2.5rem;
+  }
+
+  .result p {
+    font-size: 1.2rem;
+  }
+
+  .question .option:hover {
+    background-color: bisque;
+  }
+
+  .resultimage {
+    width: 150px;
+  }
+}
+
+@media (min-width: 768px) {
+  * {
+    box-sizing: border-box;
+  }
+
+  .quiz {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    margin: 20px auto;
+    background-color: var(--background-color);
+    border-radius: 30px;
+    padding: 10px;
+  }
+
+  .countandTime {
+    display: flex;
+    align-items: center;
+    gap: 300px;
+  }
+
+  .questionNumber {
+    font-size: 2rem;
+    background-color: #fec33d;
+    padding: 1rem;
+    border-radius: 10px;
+    font-weight: bold;
+  }
+
+  .timer {
+    font-size: 2rem;
+    background-color: #fec33d;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-top: 20px;
+    display: none;
+  }
+
+  .question h2 {
+    background-color: #eaf0e7;
+    padding: 15px;
+    border-radius: 10px;
+    width: 600px;
+    font-size: 1.3rem;
+  }
+
+  .question .option {
+    display: flex;
+    margin: 10px;
+    flex-direction: column;
+    align-items: center;
+    background-color: #eaf0e7;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    width: 250px;
+    cursor: pointer;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .question .option:hover {
+    background-color: bisque;
+  }
+
+  .question .next {
+    display: flex;
+    justify-content: center;
+    margin: 5px 0 20px 0;
+  }
+
+  .question .next button {
+    font-size: 2rem;
+    background-color: #fec33d;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 1.5rem;
+  }
+
+  .result {
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 25rem;
+    height: 25rem;
+    background-color: #fec33d;
+    margin: 140px auto 0 auto;
+  }
+
+  .result h2 {
+    font-size: 2.5rem;
+  }
+
+  .result p {
+    font-size: 1.2rem;
+  }
+
+  .resultimage {
+    width: 150px;
+  }
+}
