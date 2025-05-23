@@ -5,7 +5,7 @@ import LevelContainer from "../components/LevelContainer";
 
 function HomePage() {
   return (
-    <main className="main-content">
+    <main className="main-homepage">
       <Cours />
       <Quiz />
       <LevelContainer />

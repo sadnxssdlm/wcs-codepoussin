@@ -1,0 +1,48 @@
+.main-about {
+  margin-top: 80px;
+  padding: 20px 0;
+  background-image: url("background-image.png");
+  background-color: var(--background-color);
+  min-height: 85vh;
+
+  h2 {
+    color: white;
+    text-align: center;
+  }
+
+  img {
+    width: 300px;
+    display: block;
+    margin: 0 auto;
+  }
+}
+.github-links {
+  text-align: center;
+
+  button {
+    border: none;
+    background-color: var(--primary-color);
+    margin: 10px;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 200px;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  button:hover {
+    transform: scale(1.04);
+  }
+
+  img {
+    width: 30px;
+  }
+}
+
+@media screen and (min-width: 730px) {
+  .main-about {
+    .logo {
+      width: 700px;
+    }
+  }
+}
