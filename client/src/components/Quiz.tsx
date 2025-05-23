@@ -33,8 +33,7 @@ const data: QuestionData[] = [
     answer: "color",
   },
   {
-    question:
-      "Quelle est le meilleur systeme d'exploitation ?",
+    question: "Quelle est le meilleur systeme d'exploitation ?",
     options: ["Windows", "Mac OS", "Linux", "Chrome OS"],
     answer: "Windows",
   },
@@ -111,21 +110,21 @@ const Quiz = () => {
 
   return (
     <div className="border">
-    <div className="quiz">
-      <div className="countandTime">
-        <div className="questionNumber">
-          Question : {currentQuestion + 1} / {data.length}
+      <div className="quiz">
+        <div className="countandTime">
+          <div className="questionNumber">
+            Question : {currentQuestion + 1} / {data.length}
+          </div>
+          <div className="timer">Temps restant : {timer} secondes</div>
         </div>
-        <div className="timer">Temps restant : {timer} secondes</div>
+        <Question
+          question={data[currentQuestion].question}
+          options={data[currentQuestion].options}
+          onAnswer={handleAnswer}
+          onNext={handleNext}
+          showNextButton={showNextButton}
+        />
       </div>
-      <Question
-        question={data[currentQuestion].question}
-        options={data[currentQuestion].options}
-        onAnswer={handleAnswer}
-        onNext={handleNext}
-        showNextButton={showNextButton}
-      />
-    </div>
     </div>
   );
 };

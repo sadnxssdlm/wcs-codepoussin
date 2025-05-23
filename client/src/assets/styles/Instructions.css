@@ -1,0 +1,36 @@
+.instruction {
+  background-color: #f0f0ed;
+  color: #333300;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  max-height: 120px;
+  margin: 1.5rem auto;
+  position: relative;
+  border-left: 4px solid var(--primary-color);
+  font-size: 0.9rem;
+}
+
+.instruction h3 {
+  margin-top: 0;
+  font-size: 1.1rem;
+  color: #333300;
+  position: relative;
+  padding-left: 1.4rem;
+}
+
+.instruction h3::before {
+  content: "💡";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1rem;
+}
+
+.instruction p {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #333300;
+}
