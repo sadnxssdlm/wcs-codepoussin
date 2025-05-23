@@ -31,9 +31,11 @@ const Question = ({
         ))}
       </div>
       {showNextButton && (
-        <button type="button" className="next" onClick={onNext}>
-          Question suivante
-        </button>
+        <div className="next">
+          <button type="button" onClick={onNext}>
+            Question suivante
+          </button>
+        </div>
       )}
     </div>
   );
