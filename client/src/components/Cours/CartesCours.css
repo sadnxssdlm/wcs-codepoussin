@@ -18,9 +18,20 @@
 }
 .cours {
   text-align: center;
-  color: #ffc219;
+  background-color: #ffcc00;
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  display: block;
+  text-transform: uppercase;
+  border-radius: 8px;
 }
 
+.cours2 {
+  color: #f0f0f0;
+  text-align: center;
+  font-weight: bold;
+}
 .carte {
   background-color: #ffc219; /* fond clair, style « crème » */
   border-radius: 12px;
@@ -78,5 +89,19 @@
 
   .carte .contenu p {
     font-size: 1.1rem;
+  }
+
+  .cours {
+    background-color: #ffcc00;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    padding: 8px 20px;
+    display: block;
+    font-size: 35px;
+    margin: 0 auto 30px;
+    text-transform: uppercase;
+    width: fit-content;
+    border-radius: 8px;
   }
 }

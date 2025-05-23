@@ -109,23 +109,31 @@ const Quiz = () => {
   }
 
   return (
-    <div className="border">
-      <div className="quiz">
-        <div className="countandTime">
-          <div className="questionNumber">
-            Question : {currentQuestion + 1} / {data.length}
-          </div>
-          <div className="timer">{timer}</div>
-        </div>
-        <Question
-          question={data[currentQuestion].question}
-          options={data[currentQuestion].options}
-          onAnswer={handleAnswer}
-          onNext={handleNext}
-          showNextButton={showNextButton}
-        />
+    <>
+      <div className="cours">
+        <h1>
+          Mission 2 <br /> Teste tes connaissances.
+        </h1>
       </div>
-    </div>
+      <div className="border">
+        <div className="quiz">
+          <div className="countandTime">
+            <div className="questionNumber">
+              Question : {currentQuestion + 1} / {data.length}
+            </div>
+            <div className="timer">{timer}</div>
+          </div>
+          <Question
+            question={data[currentQuestion].question}
+            options={data[currentQuestion].options}
+            onAnswer={handleAnswer}
+            onNext={handleNext}
+            showNextButton={showNextButton}
+          />
+        </div>
+      </div>
+      ;
+    </>
   );
 };
 
