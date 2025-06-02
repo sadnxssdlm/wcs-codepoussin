@@ -1,392 +1,175 @@
-Ce projet est un monorepo JS, suivant l'architecture React-Express-MySQL telle qu'enseignée à la Wild Code School (v7.2.4) :
+<p align="center">
+  <a href="" rel="noopener">
+ <img src="https://i.imgur.com/AZ2iWek.png" alt="Project logo"></a>
+</p>
+<h3 align="center">CodePoussin</h3>
 
-```mermaid
-sequenceDiagram
-    box Web Client
-    participant React as React
-    participant Fetcher as Fetcher
-    end
-    box Web Server
-    participant Express as Express
-    participant Module as Module
-    end
-    box DB Server
-    participant DB as MySQL Server
-    end
+<div align="center">
 
-    React-)Fetcher: event
-    activate Fetcher
-    Fetcher-)Express: requête (HTTP)
-    activate Express
-    Express-)Module: appel
-    activate Module
-    Module-)DB: requête SQL
-    activate DB
-    DB--)Module: données
-    deactivate DB
-    Module--)Express: json
-    deactivate Module
-    Express--)Fetcher: réponse HTTP
-    deactivate Express
-    Fetcher--)React: render
-    deactivate Fetcher
+[![Hackathon](https://img.shields.io/badge/protojam-may25-orange.svg)](http://hackathon.url.com)
+[![Status](https://img.shields.io/badge/status-active-success.svg)]()
+[![GitHub Issues](https://img.shields.io/github/issues/sadnxssdlm/wcs-codepoussin.svg)](https://github.com/sadnxssdlm/wcs-codepoussin/issues)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/sadnxssdlm/wcs-codepoussin.svg)](https://github.com/sadnxssdlm/wcs-codepoussin/pulls)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md)
+
+</div>
+
+---
+
+<p align="center"> CodePoussin is a French educational platform that introduces children aged 6-12 to programming through interactive learning. Built for Protojam, it features a gamified quiz system with age-appropriate programming questions and a visual block-based coding game with drag-and-drop functionality. The platform makes coding concepts accessible and fun, helping young learners develop computational thinking skills without the complexity of traditional programming environments.
+    <br> 
+</p>
+
+## 📝 Table of Contents
+
+- [Problem Statement](#problem_statement)
+- [Idea / Solution](#idea)
+- [Dependencies / Limitations](#limitations)
+- [Future Scope](#future_scope)
+- [Setting up a local environment](#getting_started)
+- [Usage](#usage)
+- [Technology Stack](#tech_stack)
+- [Contributing](../CONTRIBUTING.md)
+- [Authors](#authors)
+- [Acknowledgments](#acknowledgments)
+
+## 🧐 Problem Statement <a name = "problem_statement"></a>
+
+**IDEAL:** Children should have access to intuitive, age-appropriate tools that introduce programming concepts in a fun and engaging way, helping them develop computational thinking skills from an early age. Parents and educators need accessible resources to support children's digital literacy without requiring extensive technical knowledge themselves.
+
+**REALITY:** Most existing programming education tools are either too complex for young children (6-12 years) or lack the engaging elements necessary to maintain their attention. Many educational platforms require significant setup or prior knowledge from parents and teachers, creating barriers to entry for families wanting to explore coding education.
+
+**CONSEQUENCES:** Without proper introduction to programming concepts at a young age, children miss critical opportunities to develop logical thinking and problem-solving skills. The digital divide widens as families without technical backgrounds struggle to provide their children with coding education, potentially limiting future career opportunities in an increasingly digital world.
+
+## 💡 Idea / Solution <a name = "idea"></a>
+
+CodePoussin addresses these challenges by providing a comprehensive, child-friendly platform with two main components:
+
+**Interactive Quiz System:** Age-appropriate programming questions with progressive difficulty levels, instant feedback, and gamified elements that make learning feel like playing.
+
+**Visual Block-Based Programming Game:** A drag-and-drop interface inspired by Scratch that allows children to create programs using visual blocks instead of text-based code, making abstract programming concepts tangible and understandable.
+
+The platform is designed with French children in mind, ensuring cultural relevance and linguistic accessibility while maintaining universal programming education principles.
+
+## ⛓️ Dependencies / Limitations <a name = "limitations"></a>
+
+**Technical Dependencies:**
+- Modern web browser with JavaScript enabled
+- Stable internet connection for accessing the platform
+- Device with mouse/touch interface for drag-and-drop functionality
+
+**Current Limitations:**
+- **Language Support:** Currently available only in French, limiting international accessibility
+- **Offline Functionality:** Requires internet connection, which may limit access in areas with poor connectivity
+- **Device Compatibility:** Optimized for desktop/tablet use; mobile experience may be limited due to drag-and-drop interface requirements
+- **Content Scope:** As a hackathon project, the initial content library is limited and would need expansion for comprehensive curriculum coverage
+
+These limitations exist due to the 48-hour hackathon timeframe and resource constraints. Future development phases could address these issues with additional development time and resources.
+
+## 🚀 Future Scope <a name = "future_scope"></a>
+
+**Short-term Goals:**
+- Expand quiz question database with more diverse programming concepts
+- Add more block types and programming challenges to the visual editor
+- Implement user progress tracking and achievement systems
+- Develop mobile-responsive design for better accessibility
+
+**Long-term Vision:**
+- Multi-language support (English, Spanish, German) for international reach
+- Teacher dashboard for classroom integration and student progress monitoring
+- Advanced block programming features including loops, conditionals, and functions
+- Integration with physical computing devices (Arduino, micro:bit) for hands-on learning
+- AI-powered adaptive learning that adjusts difficulty based on individual progress
+- Community features allowing children to share and remix each other's creations
+
+## 🏁 Getting Started <a name = "getting_started"></a>
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+
+Ensure you have the following installed:
+
+```
+Node.js (version 14 or higher)
+npm or yarn package manager
+Git
 ```
 
-Il est pré-configuré avec un ensemble d'outils pour aider les étudiants à produire du code de qualité industrielle, tout en restant un outil pédagogique :
+### Installing
 
-- **Concurrently** : Permet d'exécuter plusieurs commandes simultanément dans le même terminal.
-- **Vite** : Alternative à _Create-React-App_, offrant une expérience plus fluide avec moins d'outils.
-- **Biome** : Alternative à _ESlint_ et _Prettier_, assurant la qualité du code selon des règles choisies.
-- **Supertest** : Bibliothèque pour tester les serveurs HTTP en node.js.
+Follow these steps to set up the development environment:
 
-## Table des Matières
-
-- [codepoussin](#name)
-  - [Table des Matières](#table-des-matières)
-  - [Installation \& Utilisation](#installation--utilisation)
-  - [Les choses à retenir](#les-choses-à-retenir)
-    - [Commandes de Base](#commandes-de-base)
-    - [Structure des Dossiers](#structure-des-dossiers)
-    - [Mettre en place la base de données](#mettre-en-place-la-base-de-données)
-    - [Développer la partie back-end](#développer-la-partie-back-end)
-    - [REST](#rest)
-    - [Autres Bonnes Pratiques](#autres-bonnes-pratiques)
-  - [FAQ](#faq)
-    - [Installation avec Docker](#installation-avec-docker)
-      - [Mode développement](#mode-développement)
-      - [Installation de nouvelles dépendances](#installation-de-nouvelles-dépendances)
-      - [Accéder à la base de données](#accéder-à-la-base-de-données)
-    - [Déploiement avec Traefik](#déploiement-avec-traefik)
-    - [Variables d'environnement spécifiques](#variables-denvironnement-spécifiques)
-    - [Logs](#logs)
-    - [Contribution](#contribution)
-
-## Installation & Utilisation
-
-1. Installez le plugin **Biome** dans VSCode et configurez-le.
-2. Clonez ce dépôt, puis accédez au répertoire cloné.
-3. Exécutez la commande `npm install`.
-4. Créez des fichiers d'environnement (`.env`) dans les répertoires `server` et `client` : vous pouvez copier les fichiers `.env.sample` comme modèles (**ne les supprimez pas**).
-
-## Les choses à retenir
-
-### Commandes de Base
-
-| Commande               | Description                                                                 |
-|------------------------|-----------------------------------------------------------------------------|
-| `npm install`          | Installe les dépendances pour le client et le serveur                       |
-| `npm run db:migrate`   | Met à jour la base de données à partir d'un schéma défini                   |
-| `npm run dev`          | Démarre les deux serveurs (client et serveur) dans un seul terminal         |
-| `npm run check`        | Exécute les outils de validation (linting et formatage)                     |
-| `npm run test`         | Exécute les tests unitaires et d'intégration                                |
-
-### Structure des Dossiers
-
-```plaintext
-my-project/
-│
-├── server/
-│   ├── app/
-│   │   ├── modules/
-│   │   │   ├── item/
-│   │   │   │   ├── itemActions.ts
-│   │   │   │   └── itemRepository.ts
-│   │   │   └── ...
-│   │   ├── app.ts
-│   │   ├── main.ts
-│   │   └── router.ts
-│   ├── database/
-│   │   ├── client.ts
-│   │   └── schema.sql
-│   ├── tests/
-│   ├── .env
-│   └── .env.sample
-│
-└── client/
-    ├── src/
-    │   ├── components/
-    │   ├── pages/
-    │   └── App.tsx
-    ├── .env
-    └── .env.sample
-```
-
-### Mettre en place la base de données
-
-**Créer et remplir le fichier `.env`** dans le dossier `server` :
-
-```plaintext
-DB_HOST=localhost
-DB_PORT=3306
-DB_USER=not_root
-DB_PASSWORD=password
-DB_NAME=my_database
-```
-
-**Les variables sont utilisés** dans `server/database/client.ts` :
-
-```typescript
-const { DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_NAME } = process.env;
-
-import mysql from "mysql2/promise";
-
-const client = mysql.createPool({
-  host: DB_HOST,
-  port: DB_PORT as number | undefined,
-  user: DB_USER,
-  password: DB_PASSWORD,
-  database: DB_NAME,
-});
-
-export default client;
-```
-
-**Créer une table** dans `server/database/schema.sql` :
-
-```sql
-CREATE TABLE item (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  title VARCHAR(255) NOT NULL,
-  user_id INT NOT NULL,
-  FOREIGN KEY(user_id) REFERENCES user(id)
-);
-```
-
-**Insérer des données** dans `server/database/schema.sql` :
-
-```sql
-INSERT INTO item (title, user_id) VALUES
-  ('Sample Item 1', 1),
-  ('Sample Item 2', 2);
-```
-
-**Synchroniser la BDD avec le schema** :
-
-```sh
-npm run db:migrate
-```
-
-### Développer la partie back-end
-
-**Créer une route** dans `server/app/router.ts` :
-
-```typescript
-// ...
-
-/* ************************************************************************* */
-// Define Your API Routes Here
-/* ************************************************************************* */
-
-// Define item-related routes
-import itemActions from "./modules/item/itemActions";
-
-router.get("/api/items", itemActions.browse);
-
-/* ************************************************************************* */
-
-// ...
-```
-
-**Définir une action** dans `server/app/modules/item/itemActions.ts` :
-
-```typescript
-import type { RequestHandler } from "express";
-
-import itemRepository from "./itemRepository";
-
-const browse: RequestHandler = async (req, res, next) => {
-  try {
-    const items = await itemRepository.readAll();
-
-    res.json(items);
-  } catch (err) {
-    next(err);
-  }
-};
-
-export default { browse };
-```
-
-**Accéder aux données** dans `server/app/modules/item/itemRepository.ts` :
-
-```typescript
-import databaseClient from "../../../database/client";
-
-import type { Result, Rows } from "../../../database/client";
-
-interface Item {
-  id: number;
-  title: string;
-  user_id: number;
-}
-
-class ItemRepository {
-  async readAll() {
-    const [rows] = await databaseClient.query<Rows>("select * from item");
-
-    return rows as Item[];
-  }
-}
-
-export default new ItemRepository();
-```
-
-**Ajouter un middleware** 
-
-```typescript
-// ...
-
-/* ************************************************************************* */
-// Define Your API Routes Here
-/* ************************************************************************* */
-
-// Define item-related routes
-import itemActions from "./modules/item/itemActions";
-
-const foo: RequestHandler = (req, res, next) => {
-  req.message = "hello middleware";
-
-  next();
-}
-
-router.get("/api/items", foo, itemActions.browse);
-
-/* ************************************************************************* */
-
-// ...
-```
-
-`req.message` sera disponible dans `itemActions.browse`.
-
-⚠️ La propriété `message` doit être ajoutée dans `src/types/express/index.d.ts` :
-
-```diff
-// to make the file a module and avoid the TypeScript error
-export type {};
-
-declare global {
-  namespace Express {
-    export interface Request {
-      /* ************************************************************************* */
-      // Add your custom properties here, for example:
-      //
-      // user?: { ... };
-      /* ************************************************************************* */
-+      message: string;
-    }
-  }
-}
-```
-
-### REST
-
-| Opération | Méthode | Chemin d'URL | Corps de la requête | SQL    | Réponse (Succès)               | Réponse (Erreur)                                                       |
-|-----------|---------|--------------|---------------------|--------|--------------------------------|------------------------------------------------------------------------|
-| Browse    | GET     | /items       |                     | SELECT | 200 (OK), liste des items.     |                                                                        |
-| Read      | GET     | /items/:id   |                     | SELECT | 200 (OK), un item.             | 404 (Not Found), si id invalide.                                       |
-| Add       | POST    | /items       | Données de l'item   | INSERT | 201 (Created), id d'insertion. | 400 (Bad Request), si corps invalide.                                  |
-| Edit      | PUT     | /items/:id   | Données de l'item   | UPDATE | 204 (No Content).              | 400 (Bad Request), si corps invalide. 404 (Not Found), si id invalide. |
-| Destroy   | DELETE  | /items/:id   |                     | DELETE | 204 (No Content).              | 404 (Not Found), si id invalide.                                       |
-
-### Autres Bonnes Pratiques
-
-- **Sécurité** :
-  - Validez et échappez toujours les entrées des utilisateurs.
-  - Utilisez HTTPS pour toutes les communications réseau.
-  - Stockez les mots de passe de manière sécurisée en utilisant des hash forts (ex : argon2).
-  - Revoyez et mettez à jour régulièrement les dépendances.
-
-- **Code** :
-  - Suivez les principes SOLID pour une architecture de code propre et maintenable.
-  - Utilisez TypeScript pour bénéficier de la vérification statique des types.
-  - Adoptez un style de codage cohérent avec Biome.
-  - Écrivez des tests pour toutes les fonctionnalités critiques.
-
-## FAQ
-
-### Installation avec Docker
-> ⚠️ Prérequis : Vous devez avoir installé Docker et Docker Compose sur votre machine.  
-> Suivez les instructions ici : [Docker Installation](https://docs.docker.com/get-docker/).
-
-Lorsque Docker est installé et démarré, exécutez la commande suivante pour construire l'image Docker et démarrer les conteneurs :
+1. Clone the repository
 ```bash
-docker compose up -d --build
-```
-La partie _client_ de l'application sera accessible à l'adresse http://localhost:3000 et la partie _serveur_ à l'adresse http://localhost:3310.  
-Pour arrêter et supprimer les conteneurs, exécutez :
-```bash
-docker compose down
+git clone https://github.com/sadnxssdlm/wcs-codepoussin.git
+cd wcs-codepoussin
 ```
 
-#### Mode développement
-Les dépendances (du dossier `node_modules`) sont installées dans le conteneur Docker et ne seront pas visibles directement. Si vous utilisez un IDE comme VSCode et que vous souhaitez modifier des fichiers de votre application, vous devez installer les dépendances localement pour prévenir toute erreur de fichiers manquants.  
+2. Install dependencies
 ```bash
 npm install
 ```
 
-#### Installation de nouvelles dépendances
-Pour installer de nouvelles dépendances, procédez en local comme d'habitude avec `npm install <package-name>`, puis, synchronisez les dépendances dans le conteneur Docker avec la commande suivante :
+3. Set up environment variables
 ```bash
-docker compose exec web sh -c "npm install"
+cp .env.example .env
+# Edit .env file with your configuration
 ```
 
-#### Accéder à la base de données
-Pour vous connecter à la base de données avec votre terminal, exécutez la commande suivante :
+4. Start the development server
 ```bash
-docker compose exec database sh -c "mysql -uuser -ppassword js_template_fullstack"
+npm run dev
 ```
 
-### Déploiement avec Traefik
+The application should now be running on `http://localhost:3000`
 
-> ⚠️ Prérequis : Vous devez avoir installé et configuré Traefik sur votre VPS au préalable. Suivez les instructions ici : [VPS Traefik Starter Kit](https://github.com/WildCodeSchool/vps-traefik-starter-kit/).
+## 🎈 Usage <a name="usage"></a>
 
-Pour le déploiement, ajoutez les secrets suivants dans la section `secrets` → `actions` du dépôt GitHub :
+**For Children:**
+1. Visit the CodePoussin homepage
+2. Choose between Quiz mode or Block Programming mode
+3. In Quiz mode: Answer questions about programming concepts and receive immediate feedback
+4. In Block Programming mode: Drag and drop visual blocks to create programs and see them execute in real-time
 
-- `SSH_HOST` : Adresse IP de votre VPS
-- `SSH_USER` : Identifiant SSH pour votre VPS
-- `SSH_PASSWORD` : Mot de passe de connexion SSH pour votre VPS
+**For Educators:**
+- Use the platform as a supplement to computer science curriculum
+- Guide students through progressive challenges
+- Encourage experimentation and creative problem-solving
 
-Et une variable publique dans `/settings/variables/actions` :
+**For Parents:**
+- Sit with children during their first sessions to provide support
+- Encourage regular practice sessions (15-30 minutes recommended)
+- Celebrate achievements and progress milestones
 
-- `PROJECT_NAME` : Le nom du projet utilisé pour créer le sous-domaine.
+## ⛏️ Built With <a name = "tech_stack"></a>
 
-> ⚠️ Avertissement : Les underscores ne sont pas autorisés car ils peuvent causer des problèmes avec le certificat Let's Encrypt.
+- **Frontend:** React.js with TypeScript for component-based UI development
+- **Styling:** Tailwind CSS for responsive and modern design
+- **Block Editor:** Custom drag-and-drop system built with React DnD
+- **State Management:** React Context API for application state
+- **Build Tool:** Vite for fast development and optimized builds
+- **Deployment:** Vercel for seamless CI/CD and hosting
 
-L'URL de votre projet sera `https://${PROJECT-NAME}.${subdomain}.wilders.dev/`.
+## ✍️ Authors <a name = "authors"></a>
 
-### Variables d'environnement spécifiques
+**CodePoussin Team** - *Student Developers - Protojam Hackathon*
 
-Les étudiants doivent utiliser le modèle fourni dans le fichier `*.env.sample*` en suivant la convention `<PROJECT_NAME><SPECIFIC_NAME>=<THE_VARIABLE>`.
+- [@Tristanzubi](https://github.com/Tristanzubi) 
+- [@messicaa](https://github.com/messicaa) 
+- [@K-Smagghe](https://github.com/K-Smagghe) 
+- [@sadnxssdlm](https://github.com/sadnxssdlm) 
 
-> ⚠️ **Avertissement:** Le `PROJECT_NAME` doit correspondre à celui utilisé dans la variable publique Git.
+*This project was developed as part of our coding bootcamp training program during an inter-class hackathon competition.*
 
-Pour l'ajouter lors du déploiement, suivez ces deux étapes :
+See also the list of [contributors](https://github.com/sadnxssdlm/wcs-codepoussin/contributors) who participated in this project.
 
-1. Ajoutez la variable correspondante dans le fichier `docker-compose.prod.yml` (comme montré dans l'exemple : `PROJECT_NAME_SPECIFIC_NAME: ${PROJECT_NAME_SPECIFIC_NAME}`).
-2. Connectez-vous à votre serveur via SSH. Ouvrez le fichier `.env` global dans Traefik (`nano ./traefik/data/.env`). Ajoutez la variable avec la valeur correcte et sauvegardez le fichier.
+## 🎉 Acknowledgments <a name = "acknowledgments"></a>
 
-Après cela, vous pouvez lancer le déploiement automatique. Docker ne sera pas rafraîchi pendant ce processus.
-
-### Logs
-
-Pour accéder aux logs de votre projet en ligne (pour suivre le déploiement ou surveiller les erreurs), connectez-vous à votre VPS (`ssh user@host`). Ensuite, allez dans votre projet spécifique et exécutez `docker compose logs -t -f`.
-
-### Contribution
-
-Nous accueillons avec plaisir les contributions ! Veuillez suivre ces étapes pour contribuer :
-
-1. **Fork** le dépôt.
-2. **Clone** votre fork sur votre machine locale.
-3. Créez une nouvelle branche pour votre fonctionnalité ou bug fix (`git switch -c feature/your-feature-name`).
-4. **Commit** vos modifications (`git commit -m 'Add some feature'`).
-5. **Push** vers votre branche (`git push origin feature/your-feature-name`).
-6. Créez une **Pull Request** sur le dépôt principal.
-
-**Guide de Contribution** :
-
-- Assurez-vous que votre code respecte les standards de codage en exécutant `npm run check` avant de pousser vos modifications.
-- Ajoutez des tests pour toute nouvelle fonctionnalité ou correction de bug.
-- Documentez clairement vos modifications dans la description de la pull request.
-=======
-# wcs-codepoussin
->>>>>>> ac715e4e185cbc31548453e15356d20a5ebc7c74
+- **Protojam Hackathon** organizers for creating this inter-class competition opportunity
+- **Wild Code School** for providing the training program and hackathon framework
+- **Fellow students** from all classes in our promotion for the friendly competition spirit
+- **Scratch** project by MIT for pioneering visual programming education
+- **Our instructors** for guidance and support throughout our coding journey
+- All beta testers who provided valuable feedback during development
+- Open source community for the tools and libraries that made this project possible
