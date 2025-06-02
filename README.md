@@ -169,7 +169,4 @@ See also the list of [contributors](https://github.com/sadnxssdlm/wcs-codepoussi
 - **Protojam Hackathon** organizers for creating this inter-class competition opportunity
 - **Wild Code School** for providing the training program and hackathon framework
 - **Fellow students** from all classes in our promotion for the friendly competition spirit
-- **Scratch** project by MIT for pioneering visual programming education
 - **Our instructors** for guidance and support throughout our coding journey
-- All beta testers who provided valuable feedback during development
-- Open source community for the tools and libraries that made this project possible
